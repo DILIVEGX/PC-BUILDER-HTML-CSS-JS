@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400&display=swap');
+
+
+:root{
+    --general-padding:15px 10px;
+    --navcolor: rgb(114, 21, 201);
+    --pcfont:1em;
+    --mobilefont:0.6em;
+}
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header .menu-icon{
+    display: none;
+}
+
+.icons{
+    display: flex;
+    align-items: center;
+}
+
+header li, header a, header button, header input[type=search]{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: var(--pcfont);
+    text-decoration: none;
+    color:black;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: var(--navcolor);
+    min-width: fit-content;
+}
+
+.logo{
+    border-radius: 5px;
+    width:  70px;
+}
+
+.links{
+    list-style: none;
+    display: flex;
+    background-color: rgb(40, 35, 58);
+    border-radius: 10px;
+}
+
+.links li{
+    padding: var(--general-padding);
+}
+
+.links li a{
+    padding: var(--general-padding);
+    color: white;
+}
+
+.links li a:hover{
+    color: var(--navcolor)
+}
+
+header button{
+    background-color: rgb(40, 35, 58);
+    color: white;
+}
+
+input[id^="search"]::-webkit-input-placeholder {
+    color: white;
+}
+input[id^="search"]::-moz-placeholder { 
+    color: white;
+}
+input[id^="search"]:-ms-input-placeholder { 
+    color: white;
+}
+input[id^="search"]:-moz-placeholder { 
+    color: white;
+}
+
+header input[type=search]{
+    width: 200px;
+    border-radius: 8px;
+    border: 2px solid white;
+    background-color: var(--navcolor);
+    padding: var(--general-padding);   
+    color: white;
+    background-image: url('assets/icons/search.png');
+    background-position: 5px center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    padding-left: 45px;
+}
+
+.form-search{
+    color: white;
+    
+}
+
+.register, .login{
+    border-radius: 8px;
+    padding: var(--general-padding);
+    min-width: max-content;
+    justify-content: center;
+}
+
+.account{
+    display: flex;
+    gap: 0.2em;
+}
+
+header input[type=search]{
+    transition: width 0.4s ease-in-out;
+}
+  
+input[type=search]:focus {
+    outline-color: white;
+}
+
+.links>*{
+    min-width: max-content;
+}
+
+@media (min-width: 1245px){
+    input[type=search]:focus {
+        width:500px;
+        outline-color: white;
+    }
+}
+
+
+@media (max-width: 958px){
+
+    header{
+        position:sticky;
+        top: 0;
+        width: 100%;
+    }
+
+    .links>*{
+        min-width: auto;
+    }
+
+    .links{
+        border-radius: 0;
+        height: 100%;
+        width: 80%;
+    }
+
+    input[type=search]:focus {
+        
+        outline-color: white;
+    }
+
+    header input[type=search]{
+        transition: none;
+    }
+
+    header input[type=search]{
+        width:min-content;
+        outline-color: white;
+    }
+
+    header .menu-icon, header .logo{
+        display:block;
+        width: 40px;
+    }
+
+    header nav{
+        display: none;
+        top: 0;
+        left: -100%;
+        position:absolute;
+        height: 100vh;
+        width: 100%;
+        transition: left 300ms;
+        
+    }
+
+    header nav>ul{
+        display: flex;
+        flex-direction: column;
+        font-size: xxx-large;
+    }
+
+
+    .icons{
+        flex-direction: row-reverse;
+    }
+
+    header li, header a, header button, header input[type=search]{
+        font-size: var(--mobilefont);
+    }
+
+
+    .headeropen{
+        left: 0%;
+    }
+
+    .headerclose{
+        left: -100%;
+    }
+
+}
+
